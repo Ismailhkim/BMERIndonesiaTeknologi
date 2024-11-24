@@ -1,0 +1,350 @@
+/* style.css */
+:root {
+    --primary-orange: #faa602;
+    --secondary-black: #1A1A1A;
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Navigation */
+nav {
+    background-color: var(--secondary-black);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    color: var(--primary-orange);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-orange);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--secondary-black);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+}
+
+.hero-content {
+    color: var(--text-light);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-orange);
+}
+
+/* Video Section */
+.video-section {
+    padding: 4rem 2rem;
+    background-color: var(--secondary-black);
+}
+
+.video-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+video {
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Products Section */
+.products {
+    padding: 4rem 2rem;
+    background-color: var(--text-light);
+}
+
+.products h2 {
+    text-align: center;
+    color: var(--secondary-black);
+    margin-bottom: 3rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    padding: 1rem;
+    color: var(--primary-orange);
+}
+
+.product-card p {
+    padding: 0 1rem 1rem;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 4rem 2rem;
+    background-color: var(--secondary-black);
+}
+
+.portfolio h2 {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 3rem;
+}
+
+.portfolio-slider {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.portfolio-track {
+    display: flex;
+    transition: transform 0.5s ease;
+    animation: slide-animation 20s infinite linear; /* Animasi bergerak otomatis */
+}
+
+.portfolio-item {
+    min-width: 300px;
+    margin-right: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.portfolio-item h3 {
+    padding: 1rem;
+    color: var(--primary-orange);
+}
+
+/* Keyframe animation for automatic sliding */
+@keyframes slide-animation {
+    0% {
+        transform: translateX(0); /* Mulai dari posisi awal */
+    }
+    100% {
+        transform: translateX(-100%); /* Geser ke kiri hingga selesai */
+    }
+}
+
+/* Controls for the slider */
+.slider-prev,
+.slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-orange);
+    border: none;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider-prev {
+    left: 1rem;
+}
+
+.slider-next {
+    right: 1rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 4rem 2rem;
+    background-color: var(--text-light);
+}
+
+.contact h2 {
+    text-align: center;
+    color: var(--secondary-black);
+    margin-bottom: 3rem;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.whatsapp-button {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+    background-color: #128C7E;
+}
+
+.whatsapp-button i {
+    margin-right: 0.5rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-black);
+    color: var(--text-light);
+    padding: 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo {
+    color: var(--primary-orange);
+    font-weight: bold;
+}
+
+.footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 2rem;
+}
+
+.footer-social a {
+    color: var(--text-light);
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+    }
+    
+    .nav-links li {
+        margin: 0 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+    }
+    
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links, .footer-social {
+        margin-top: 1rem;
+    }
+    
+    .footer-links a {
+        margin: 0 1rem;
+    }
+}
