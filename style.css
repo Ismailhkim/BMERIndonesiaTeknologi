@@ -215,11 +215,18 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
+    transition: transform 0.3s ease; /* Untuk transisi yang lebih halus saat hover */
 }
 
 .portfolio-track {
     display: flex;
     animation: slide-animation 20s infinite linear;
+    transition: transform 0.3s ease;
+}
+
+/* Menghentikan animasi saat hover pada portfolio */
+.portfolio-slider:hover .portfolio-track {
+    animation-play-state: paused;
 }
 
 .portfolio-item {
@@ -242,6 +249,13 @@ nav {
     padding: 1rem;
     color: var(--primary-orange);
 }
+
+/* Membuat portfolio item menjadi lebih besar saat di-klik */
+.portfolio-item:active {
+    transform: scale(1.1); /* Membesarkan elemen saat di klik */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan */
+}
+
 
 /* Contact Section */
 .contact {
