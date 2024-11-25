@@ -37,10 +37,10 @@ nav {
     padding: 0 2rem;
 }
 
-.logo {
-    color: var(--primary-orange);
-    font-size: 1.5rem;
-    font-weight: bold;
+.logo img {
+    height: 30px; /* Adjust this value as per your logo size */
+    width: auto; /* Maintains aspect ratio */
+    margin-left: -60px; /* Adjust the negative value to move it left */
 }
 
 .nav-links {
@@ -193,6 +193,15 @@ nav {
 .product-card p {
     padding: 0 1rem 1rem;
     color: var(--text-dark);
+}
+
+/* Judul Aksesoris */
+.accessories-title {
+    text-align: center; /* Menyusun teks agar terpusat */
+    font-size: 3rem; /* Ukuran font */
+    font-weight: bold; /* Membuat teks lebih tebal */
+    color: #333; /* Warna teks */
+    margin-bottom: 1.5rem; /* Memberikan ruang di bawah judul */
 }
 
 .accessory-grid {
