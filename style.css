@@ -83,36 +83,77 @@ nav {
 }
 
 /* Hero Section */
-.hero {
+#home {
     position: relative;
-    background: linear-gradient(135deg, #faa602, #1A1A1A);
-    background-size: 400% 400%;
-    animation: gradientBackground 6s ease infinite;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    background: 
+        url('image1.jpg') no-repeat center center / cover, 
+        url('image2.jpg') no-repeat center center / cover, 
+        url('image3.jpg') no-repeat center center / cover, 
+        url('image4.jpg') no-repeat center center / cover, 
+        url('image5.jpg') no-repeat center center / cover;
+    background-size: cover;
+    animation: backgroundMove 25s infinite alternate; /* Animasi untuk background */
+}
+
+/* Animasi untuk background bergerak (pergantian gambar) */
+@keyframes backgroundMove {
+    0% {
+        background-image: url('image1.jpg'), url('image2.jpg'), url('image3.jpg'), url('image4.jpg'), url('image5.jpg');
+    }
+    20% {
+        background-image: url('image2.jpg'), url('image3.jpg'), url('image4.jpg'), url('image5.jpg'), url('image1.jpg');
+    }
+    40% {
+        background-image: url('image3.jpg'), url('image4.jpg'), url('image5.jpg'), url('image1.jpg'), url('image2.jpg');
+    }
+    60% {
+        background-image: url('image4.jpg'), url('image5.jpg'), url('image1.jpg'), url('image2.jpg'), url('image3.jpg');
+    }
+    80% {
+        background-image: url('image5.jpg'), url('image1.jpg'), url('image2.jpg'), url('image3.jpg'), url('image4.jpg');
+    }
+    100% {
+        background-image: url('image1.jpg'), url('image2.jpg'), url('image3.jpg'), url('image4.jpg'), url('image5.jpg');
+    }
+}
+
+/* Menambahkan overlay transparansi pada background */
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.60); /* Transparansi 60% */
+    z-index: 1;
+}
+
+/* Konten pada Hero Section (teks) */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
     text-align: center;
-    padding: 0 2rem;
-    overflow: hidden;
+    padding-top: 20%;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-light);
-    animation: fadeIn 2s ease-out;
-    z-index: 1;
+/* Memperbesar tulisan untuk judul (h1) */
+.hero-content h1 {
+    font-size: 4rem; 
+    font-weight: bold;
+    margin: 0;
 }
 
-.hero p {
-    color: var(--text-light);
+/* Memperbesar tulisan untuk paragraf (p) */
+.hero-content p {
     font-size: 1.5rem;
-    margin-top: 1rem;
-    animation: fadeIn 2s ease-out;
-    z-index: 1;
+    font-weight: 300;
+    margin-top: 10px;
 }
+
+
 
 /* Video Styling */
 .hero-video {
@@ -198,7 +239,7 @@ nav {
 /* Judul Aksesoris */
 .accessories-title {
     text-align: center; /* Menyusun teks agar terpusat */
-    font-size: 3rem; /* Ukuran font */
+    font-size: rem; /* Ukuran font */
     font-weight: bold; /* Membuat teks lebih tebal */
     color: #333; /* Warna teks */
     margin-bottom: 1.5rem; /* Memberikan ruang di bawah judul */
@@ -409,6 +450,18 @@ footer:hover {
     animation: fadeIn 1s ease-in;
 }
 
+/* Gaya hak cipta */
+.footer-copyright {
+    font-size: 12px; /* Ukuran teks lebih kecil */
+    color: #888; /* Warna teks abu-abu */
+    text-align: center; /* Teks sejajar di tengah */
+    margin-top: 40px; /* Memberi jarak lebih besar ke atas agar lebih terpisah */
+}
+
+.footer-copyright p {
+    margin: 0; /* Hilangkan margin bawaan */
+}
+
 /* Logo BMER di Footer */
 .footer-logo {
     color: var(--text-light);
@@ -432,21 +485,28 @@ footer:hover {
 }
 
 .footer-social {
-    display: center;
-    gap: 1.5rem;
+    display: flex;
+    flex-direction: column; /* Mengatur arah vertikal (atas bawah) */
+    align-items: flex-start; /* Menyelaraskan teks di kiri */
+    gap: 10px; /* Jarak antar elemen */
 }
 
 .footer-social a {
-    color: var(--text-light);
-    font-size: 1.5rem;
-    transition: transform 0.1s ease, color 0.1s ease;
-    text-decoration: none;
+    display: flex;
+    align-items: center; /* Ikon dan teks tetap sejajar */
+    text-decoration: none; /* Menghapus garis bawah pada tautan */
+    color: inherit; /* Mengikuti tema warna teks */
+    font-size: 16px; /* Ukuran font */
+}
+
+.footer-social a i {
+    margin-right: 5px; /* Jarak antara ikon dan teks */
 }
 
 .footer-social a:hover {
-    transform: scale(1.2);
-    color: #000000;
+    color: #ff5722; /* Warna saat hover */
 }
+
 
 /* Scroll to Top Button */
 .scroll-to-top {
