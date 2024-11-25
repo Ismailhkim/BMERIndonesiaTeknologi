@@ -195,6 +195,76 @@ nav {
     color: var(--text-dark);
 }
 
+.accessory-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 columns */
+    grid-template-rows: repeat(3, 1fr); /* Make each grid item square */
+    gap: 25px;
+    padding: 25px;
+}
+
+.accessory-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 25px; /* Rounded corners for accessory cards */
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease-in-out;
+    height: 100%; /* Ensure each card is square */
+}
+
+.accessory-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 25px; /* Apply rounded corners to images */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Detail Aksesoris yang tersembunyi */
+.accessory-detail {
+    display: flex; /* Flexbox untuk posisi tengah */
+    flex-direction: column; /* Elemen disusun secara vertikal */
+    justify-content: center; /* Vertikal ke tengah */
+    align-items: center; /* Horizontal ke tengah */
+    text-align: center; /* Text alignment */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Transparan gelap di atas gambar */
+    color: white; /* Warna teks menjadi hitam */
+    padding: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.accessory-card:hover .accessory-detail {
+    opacity: 1;
+    visibility: visible;
+}
+
+.accessory-card:hover {
+    transform: scale(1.10); /* Efek zoom saat hover */
+}
+
+.accessory-card:hover img {
+    opacity: 0.6; /* Menurunkan opacity gambar saat hover */
+}
+
+.accessory-detail h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.accessory-detail p {
+    font-size: 14px;
+}
+
+
 /* Portfolio Section */
 .portfolio {
     padding: 6rem 2rem;
@@ -215,7 +285,7 @@ nav {
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
-    transition: transform 0.3s ease; /* Untuk transisi yang lebih halus saat hover */
+    transition: transform 0.3s ease; 
 }
 
 .portfolio-track {
@@ -224,7 +294,6 @@ nav {
     transition: transform 0.3s ease;
 }
 
-/* Menghentikan animasi saat hover pada portfolio */
 .portfolio-slider:hover .portfolio-track {
     animation-play-state: paused;
 }
@@ -250,10 +319,9 @@ nav {
     color: var(--primary-orange);
 }
 
-/* Membuat portfolio item menjadi lebih besar saat di-klik */
 .portfolio-item:active {
-    transform: scale(1.1); /* Membesarkan elemen saat di klik */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Bayangan */
+    transform: scale(1.1); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 }
 
 
@@ -265,7 +333,7 @@ nav {
 
 .contact h2 {
     text-align: center;
-    color: var(--secondary-black);
+    color: var(--secondary-black);  
     margin-bottom: 3rem;
     font-size: 2.5rem;
     font-weight: bold;
@@ -275,6 +343,7 @@ nav {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    color: #000000; 
 }
 
 .whatsapp-button {
@@ -319,7 +388,7 @@ footer {
 }
 
 footer:hover {
-    background-color: var(--primary-orange); /* Mengubah warna latar belakang menjadi oranye saat hover */
+    background-color: var(--primary-orange); 
 }
 
 .footer-content {
@@ -339,7 +408,7 @@ footer:hover {
 }
 
 .footer-logo:hover {
-    color: var(--text-light); /* Mengubah warna logo menjadi oranye saat hover */
+    color: var(--text-light); 
 }
 
 .footer-links a {
@@ -354,7 +423,7 @@ footer:hover {
 }
 
 .footer-social {
-    display: flex;
+    display: center;
     gap: 1.5rem;
 }
 
