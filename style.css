@@ -92,6 +92,7 @@ nav {
         url('image3.jpg') no-repeat center center / cover, 
         url('image4.jpg') no-repeat center center / cover, 
         url('image5.jpg') no-repeat center center / cover;
+        url('image6.jpg') no-repeat center center / cover;
     background-size: cover;
     animation: backgroundMove 25s infinite alternate; /* Animasi untuk background */
 }
@@ -314,6 +315,88 @@ nav {
     font-size: 14px;
 }
 
+/* Layanan Section */
+.services {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.services h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #ff9800; /* Warna oranye */
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* About Section */
+.about {
+    padding: 2rem;
+    background-color: #fdfdfd;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.about h2 i {
+    color: #ff9800; /* Warna oranye */
+    font-size: 2rem;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #555;
+}
+
+.about-text p {
+    margin-bottom: 1rem;
+}
+
 
 /* Portfolio Section */
 .portfolio {
@@ -374,6 +457,76 @@ nav {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
 }
 
+/* Add rounded corners to the map container */
+.rounded-map iframe {
+    border-radius: 15px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensures the content inside the iframe respects the rounded corners */
+}
+
+/* Styling untuk Visi dan Misi Section */
+.visi-misi {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.visi-misi-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.visi, .misi {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 45%;
+    min-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.visi:hover, .misi:hover {
+    transform: scale(1.05);
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Ikon warna oranye */
+.vision-icon, .mission-icon {
+    font-size: 40px;
+    color: #FFA500; /* Warna oranye */
+}
+
+/* Border warna oranye untuk visi dan misi */
+.visi {
+    border-left: 4px solid #FFA500; /* Warna oranye untuk visi */
+}
+
+.misi {
+    border-left: 4px solid #FFA500; /* Warna oranye untuk misi */
+}
+
 
 /* Contact Section */
 .contact {
@@ -412,22 +565,44 @@ nav {
     transform: translateY(-5px);
 }
 
-/* Footer */
-footer {
-    background-color: var(--secondary-black);
-    color: var(--text-light);
-    padding: 2rem;
-    transition: background-color 0.3s ease;
+/* Move the map to the right */
+.map-container {
+    margin-left: 240px; /* Adjust this value to move the map further to the right */
+    margin-bottom: 100px; /* Keep the margin bottom for space with footer */
 }
 
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    animation: fadeIn 1s ease-in;
+
+/* Add rounded corners to the map container */
+.rounded-map iframe {
+    border-radius: 15px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensures the content inside the iframe respects the rounded corners */
 }
+
+/* WhatsApp Button Styling */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the screen */
+    right: 20px;  /* Distance from the right of the screen */
+    background-color: #25D366; /* WhatsApp color */
+    color: white;
+    border-radius: 50%; /* Make it round */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px; /* Icon size */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the button */
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E; /* Darker WhatsApp color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+
 
 /* Footer */
 footer {
