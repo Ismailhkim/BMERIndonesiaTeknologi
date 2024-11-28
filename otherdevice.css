@@ -2,7 +2,7 @@
 .hero {
     position: relative;
     background: #f4f4f4; /* Ganti dengan warna latar belakang hero */
-    padding: 100px 20px;  /* Padding yang lebih kecil di perangkat kecil */
+    padding: 80px 20px;  /* Padding lebih kecil untuk perangkat mobile */
     text-align: center;
 }
 
@@ -27,7 +27,7 @@
 
 /* Judul Hero */
 .hero-content h1 {
-    font-size: 3em;
+    font-size: 2.5em;  /* Ukuran font lebih kecil untuk handphone */
     color: #333;
     margin: 0;
     animation-delay: 0.3s;
@@ -35,22 +35,23 @@
 
 /* Paragraf Hero */
 .hero-content p {
-    font-size: 1.2em;
+    font-size: 1em;   /* Ukuran font lebih kecil untuk handphone */
     color: #555;
     margin-top: 20px;
     animation-delay: 0.6s;
 }
 
-/* Responsive Design untuk Mobile */
+/* Responsive untuk Mobile (Handphone) */
 @media screen and (max-width: 768px) {
     /* Mengatur padding untuk mobile */
     .hero {
-        padding: 80px 10px; /* Padding lebih kecil untuk layar kecil */
+        padding: 80px 15px; /* Padding lebih kecil */
     }
 
-    /* Judul lebih kecil untuk perangkat kecil */
+    /* Judul lebih kecil untuk perangkat mobile */
     .hero-content h1 {
-        font-size: 2.5em; /* Ukuran font lebih kecil */
+        font-size: 2em; /* Ukuran font lebih kecil */
+        margin-bottom: 15px; /* Mengurangi margin bawah judul */
     }
 
     /* Paragraf lebih kecil */
@@ -58,35 +59,24 @@
         font-size: 1em;   /* Ukuran font lebih kecil */
         margin-top: 15px;  /* Memberikan jarak lebih kecil */
     }
-}
 
-/* Responsive untuk Tablet atau Layar Lebih Besar (Max-width 1024px) */
-@media screen and (max-width: 1024px) {
-    .hero {
-        padding: 90px 30px; /* Padding lebih kecil untuk tablet */
-    }
-
-    .hero-content h1 {
-        font-size: 2.8em; /* Ukuran font sedikit lebih kecil */
-    }
-
-    .hero-content p {
-        font-size: 1.1em; /* Ukuran font sedikit lebih kecil */
+    /* Menjaga konten tetap responsif */
+    .hero-content {
+        padding: 0 10px;  /* Berikan sedikit ruang pada kiri dan kanan */
     }
 }
 
-/* Responsif untuk layar besar (Desktop/PC) */
-@media screen and (min-width: 1025px) {
-    /* Menjaga padding dan ukuran teks tetap besar */
+/* Optional: Jika ingin mengurangi lebih banyak spasi di perangkat kecil */
+@media screen and (max-width: 480px) {
     .hero {
-        padding: 100px 50px; /* Padding besar untuk layar besar */
+        padding: 60px 10px; /* Padding lebih kecil */
     }
 
     .hero-content h1 {
-        font-size: 3.5em; /* Ukuran font terbesar di layar besar */
+        font-size: 1.8em; /* Ukuran font lebih kecil untuk ponsel yang lebih kecil */
     }
 
     .hero-content p {
-        font-size: 1.3em; /* Ukuran font besar untuk paragraf */
+        font-size: 0.9em; /* Ukuran font lebih kecil */
     }
 }
