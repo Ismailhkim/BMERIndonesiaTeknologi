@@ -575,18 +575,41 @@ p {
     transform: translateY(-5px);
 }
 
-/* Move the map to the right */
+/* Container for the Map */
 .map-container {
-    margin-left: 240px; /* Adjust this value to move the map further to the right */
-    margin-bottom: 100px; /* Keep the margin bottom for space with footer */
+    margin-left: 240px; /* Keep for desktop positioning */
+    margin-bottom: 100px;
+    transition: margin 0.3s ease;
 }
 
+/* Container for the Map */
+.map-container {
+    margin-left: 433px; /* Keep for desktop positioning */
+    margin-bottom: 100px;
+    transition: margin 0.3s ease;
+}
 
 /* Add rounded corners to the map container */
 .rounded-map iframe {
-    border-radius: 15px; /* Adjust the value as needed */
+    border-radius: 15px;
     overflow: hidden; /* Ensures the content inside the iframe respects the rounded corners */
+    width: 50%; /* Ensure iframe takes up the full width */
+    height: 200px; /* Default height for larger screens */
 }
+
+/* Adjust map size for smaller screens */
+@media (max-width: 768px) {
+    .map-container {
+        margin-left: 0; /* Remove the left margin for mobile */
+        padding: 20px; /* Add padding for better spacing */
+    }
+
+    .rounded-map iframe {
+        height: 250px; /* Adjust map height for smaller screens */
+    }
+}
+
+
 
 /* WhatsApp Button Styling */
 .whatsapp-btn {
