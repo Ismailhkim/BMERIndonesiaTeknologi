@@ -18,7 +18,6 @@ body {
     cursor: url('Logo BMER.png'), auto;  /* Gantilah 'images/bmer-logo.png' dengan path yang sesuai */
 }
 
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.6;
@@ -92,43 +91,20 @@ nav {
 #home {
     position: relative;
     height: 100vh;
-    background: 
-        url('image1.jpg') no-repeat center center / cover, 
-        url('image2.jpg') no-repeat center center / cover, 
-        url('image3.jpg') no-repeat center center / cover, 
-        url('image4.jpg') no-repeat center center / cover, 
-        url('image5.jpg') no-repeat center center / cover;
-        url('image6.jpg') no-repeat center center / cover;
-        url('image7.jpg') no-repeat center center / cover;
-        url('image8.jpg') no-repeat center center / cover;
+    background: url('image1.jpg') no-repeat center center / cover;
     background-size: cover;
     animation: backgroundMove 25s infinite alternate; /* Animasi untuk background */
 }
 
-/* Animasi untuk background bergerak (pergantian gambar) */
 @keyframes backgroundMove {
-    0% {
-        background-image: url('image1.jpg'), url('image2.jpg'), url('image3.jpg'), url('image4.jpg'), url('image5.jpg')
-    }
-    20% {
-        background-image: url('image2.jpg'), url('image3.jpg'), url('image4.jpg'), url('image5.jpg'), url('image1.jpg');
-    }
-    40% {
-        background-image: url('image3.jpg'), url('image4.jpg'), url('image5.jpg'), url('image1.jpg'), url('image2.jpg');
-    }
-    60% {
-        background-image: url('image4.jpg'), url('image5.jpg'), url('image1.jpg'), url('image2.jpg'), url('image3.jpg');
-    }
-    80% {
-        background-image: url('image5.jpg'), url('image1.jpg'), url('image2.jpg'), url('image3.jpg'), url('image4.jpg');
-    }
-    100% {
-        background-image: url('image1.jpg'), url('image2.jpg'), url('image3.jpg'), url('image4.jpg'), url('image5.jpg');
-    }
+    0% { background-image: url('image1.jpg'); }
+    20% { background-image: url('image2.jpg'); }
+    40% { background-image: url('image3.jpg'); }
+    60% { background-image: url('image4.jpg'); }
+    80% { background-image: url('image5.jpg'); }
+    100% { background-image: url('image6.jpg'); }
 }
 
-
-/* Menambahkan overlay transparansi pada background */
 #home::before {
     content: "";
     position: absolute;
@@ -136,11 +112,10 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.60); /* Transparansi 60% */
+    background-color: rgba(0, 0, 0, 0.60);
     z-index: 1;
 }
 
-/* Konten pada Hero Section (teks) */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -149,22 +124,18 @@ nav {
     padding-top: 20%;
 }
 
-/* Memperbesar tulisan untuk judul (h1) */
 .hero-content h1 {
-    font-size: 4rem; 
+    font-size: 3rem; /* Adjusted for mobile */
     font-weight: bold;
     margin: 0;
 }
 
-/* Memperbesar tulisan untuk paragraf (p) */
 .hero-content p {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Adjusted for mobile */
     font-weight: 300;
     margin-top: 10px;
 }
-
-
 
 /* Video Styling */
 .hero-video {
@@ -172,23 +143,17 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
+    width: 80%; /* Adjusted for mobile */
+    height: 80%;
     object-fit: cover;
     z-index: 0;
     transition: all 0.5s ease;
     border-radius: 15px;
 }
 
-.hero-video:hover {
-    width: 80%;
-    height: 80%;
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
 /* Products Section */
 .products {
-    padding: 6rem 2rem;
+    padding: 4rem 2rem; /* Adjusted for mobile */
     background-color: var(--text-light);
     margin-bottom: 4rem;
 }
@@ -197,13 +162,13 @@ nav {
     text-align: center;
     color: var(--secondary-black);
     margin-bottom: 3rem;
-    font-size: 2.5rem;
+    font-size: 2rem; /* Adjusted for mobile */
     font-weight: bold;
 }
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Adjusted for mobile */
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -217,7 +182,6 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     opacity: 0;
     animation: fadeIn 1.5s forwards;
-    animation-delay: 0.3s;
 }
 
 .product-card:hover {
@@ -237,112 +201,40 @@ nav {
     transform: scale(1);
 }
 
-.product-card h3 {
-    padding: 1rem;
-    color: var(--primary-orange);
-}
-
-.product-card p {
-    padding: 0 1rem 1rem;
-    color: var(--text-dark);
-}
-
-/* Judul Aksesoris */
-.accessories-title {
-    text-align: center; /* Menyusun teks agar terpusat */
-    font-size: rem; /* Ukuran font */
-    font-weight: bold; /* Membuat teks lebih tebal */
-    color: #333; /* Warna teks */
-    margin-bottom: 1.5rem; /* Memberikan ruang di bawah judul */
-}
-
+/* Accessories Section */
 .accessory-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr); /* 6 columns */
-    grid-template-rows: repeat(3, 1fr); /* Make each grid item square */
-    gap: 25px;
-    padding: 25px;
+    grid-template-columns: repeat(2, 1fr); /* Adjusted for mobile */
+    gap: 20px; /* Adjusted for mobile */
 }
 
 .accessory-card {
     position: relative;
     overflow: hidden;
     border: 1px solid #ddd;
-    border-radius: 25px; /* Rounded corners for accessory cards */
+    border-radius: 25px;
     background-color: #f9f9f9;
     transition: transform 0.3s ease-in-out;
-    height: 100%; /* Ensure each card is square */
-}
-
-.accessory-card img {
-    width: 100%;
     height: 100%;
-    display: block;
-    object-fit: cover;
-    border-radius: 25px; /* Apply rounded corners to images */
-    transition: opacity 0.3s ease-in-out;
 }
 
-/* Detail Aksesoris yang tersembunyi */
-.accessory-detail {
-    display: flex; /* Flexbox untuk posisi tengah */
-    flex-direction: column; /* Elemen disusun secara vertikal */
-    justify-content: center; /* Vertikal ke tengah */
-    align-items: center; /* Horizontal ke tengah */
-    text-align: center; /* Text alignment */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Transparan gelap di atas gambar */
-    color: white; /* Warna teks menjadi hitam */
-    padding: 10px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-
-.accessory-card:hover .accessory-detail {
-    opacity: 1;
-    visibility: visible;
-}
-
-.accessory-card:hover {
-    transform: scale(1.10); /* Efek zoom saat hover */
-}
-
-.accessory-card:hover img {
-    opacity: 0.6; /* Menurunkan opacity gambar saat hover */
-}
-
-.accessory-detail h3 {
-    font-size: 18px;
-    margin: 0;
-}
-
-.accessory-detail p {
-    font-size: 14px;
-}
-
-/* Layanan Section */
+/* Service Section */
 .services {
-    padding: 2rem;
+    padding: 2rem 1rem; /* Adjusted for mobile */
     background-color: #f9f9f9;
     text-align: center;
 }
 
 .services h2 {
     margin-bottom: 1.5rem;
-    font-size: 2rem;
+    font-size: 1.8rem; /* Adjusted for mobile */
     color: #333;
 }
 
 .services-grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+    flex-direction: column; /* Adjusted for mobile */
+    gap: 1rem; /* Adjusted for mobile */
 }
 
 .service-card {
@@ -350,31 +242,14 @@ nav {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
-    width: 250px;
+    width: 100%; /* Adjusted for mobile */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.service-icon {
-    font-size: 2.5rem;
-    color: #ff9800; /* Warna oranye */
-    margin-bottom: 1rem;
-}
-
-.service-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: #555;
-}
-
-.service-card p {
-    font-size: 0.9rem;
-    color: #666;
-}
-
 /* About Section */
 .about {
-    padding: 2rem;
+    padding: 2rem 1rem; /* Adjusted for mobile */
     background-color: #fdfdfd;
     text-align: center;
 }
@@ -383,160 +258,16 @@ nav {
     font-size: 2rem;
     color: #333;
     margin-bottom: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.about h2 i {
-    color: #ff9800; /* Warna oranye */
-    font-size: 2rem;
 }
 
 .about-text {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     text-align: left;
     line-height: 1.8;
     font-size: 1rem;
     color: #555;
 }
-
-.about-text p {
-    margin-bottom: 1rem;
-}
-
-
-/* Portfolio Section */
-.portfolio {
-    padding: 6rem 2rem;
-    background-color: var(--secondary-black);
-    margin-top: 4rem;
-}
-
-.portfolio h2 {
-    text-align: center;
-    color: var(--text-light);
-    margin-bottom: 3rem;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-.portfolio-slider {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    transition: transform 0.3s ease; 
-}
-
-.portfolio-track {
-    display: flex;
-    animation: slide-animation 20s infinite linear;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-slider:hover .portfolio-track {
-    animation-play-state: paused;
-}
-
-.portfolio-item {
-    min-width: 300px;
-    margin-right: 2rem;
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    animation: fadeIn 1.5s forwards;
-    opacity: 0;
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.portfolio-item h3 {
-    padding: 1rem;
-    color: var(--primary-orange);
-}
-
-.portfolio-item:active {
-    transform: scale(1.1); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); 
-}
-
-/* Add rounded corners to the map container */
-.rounded-map iframe {
-    border-radius: 15px; /* Adjust the value as needed */
-    overflow: hidden; /* Ensures the content inside the iframe respects the rounded corners */
-}
-
-/* Styling untuk Visi dan Misi Section */
-.visi-misi {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.visi-misi-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.visi, .misi {
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 45%;
-    min-width: 300px;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.visi:hover, .misi:hover {
-    transform: scale(1.05);
-}
-
-h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 15px;
-    color: #333;
-}
-
-p {
-    font-size: 16px;
-    color: #555;
-    margin-top: 10px;
-}
-
-/* Ikon warna oranye */
-.vision-icon, .mission-icon {
-    font-size: 40px;
-    color: #FFA500; /* Warna oranye */
-}
-
-/* Border warna oranye untuk visi dan misi */
-.visi {
-    border-left: 4px solid #FFA500; /* Warna oranye untuk visi */
-}
-
-.misi {
-    border-left: 4px solid #FFA500; /* Warna oranye untuk misi */
-}
-
 
 /* Contact Section */
 .contact {
@@ -546,96 +277,42 @@ p {
 
 .contact h2 {
     text-align: center;
-    color: var(--secondary-black);  
+    color: var(--secondary-black);
     margin-bottom: 3rem;
-    font-size: 2.5rem;
+    font-size: 2rem; /* Adjusted for mobile */
     font-weight: bold;
 }
 
 .contact-container {
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
-    color: #000000; 
+    color: #000000;
 }
 
-.whatsapp-button {
-    display: inline-block;
-    background-color: #25D366;
-    color: var(--text-light);
-    padding: 1rem 2rem;
-    border-radius: 30px;
-    text-decoration: none;
-    margin-top: 2rem;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.whatsapp-button:hover {
-    background-color: #128C7E;
-    transform: translateY(-5px);
-}
-
-/* Container for the Map */
-.map-container {
-    margin-left: 240px; /* Keep for desktop positioning */
-    margin-bottom: 100px;
-    transition: margin 0.3s ease;
-}
-
-/* Container for the Map */
-.map-container {
-    margin-left: 433px; /* Keep for desktop positioning */
-    margin-bottom: 100px;
-    transition: margin 0.3s ease;
-}
-
-/* Add rounded corners to the map container */
-.rounded-map iframe {
-    border-radius: 15px;
-    overflow: hidden; /* Ensures the content inside the iframe respects the rounded corners */
-    width: 50%; /* Ensure iframe takes up the full width */
-    height: 200px; /* Default height for larger screens */
-}
-
-/* Adjust map size for smaller screens */
-@media (max-width: 768px) {
-    .map-container {
-        margin-left: 0; /* Remove the left margin for mobile */
-        padding: 20px; /* Add padding for better spacing */
-    }
-
-    .rounded-map iframe {
-        height: 250px; /* Adjust map height for smaller screens */
-    }
-}
-
-
-
-/* WhatsApp Button Styling */
+/* WhatsApp Button */
 .whatsapp-btn {
     position: fixed;
-    bottom: 20px; /* Distance from the bottom of the screen */
-    right: 20px;  /* Distance from the right of the screen */
-    background-color: #25D366; /* WhatsApp color */
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #25D366;
     color: white;
-    border-radius: 50%; /* Make it round */
+    border-radius: 50%;
     width: 60px;
     height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px; /* Icon size */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for the button */
-    transition: all 0.3s ease; /* Smooth transition on hover */
-    z-index: 1000; /* Ensures it stays on top of other content */
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
 }
 
 .whatsapp-btn:hover {
-    background-color: #128C7E; /* Darker WhatsApp color on hover */
-    transform: scale(1.1); /* Slightly enlarge on hover */
+    background-color: #128C7E;
+    transform: scale(1.1);
 }
-
-
 
 /* Footer */
 footer {
@@ -646,208 +323,10 @@ footer {
 }
 
 footer:hover {
-    background-color: var(--primary-orange); 
+    background-color: var(--primary-orange);
 }
 
 .footer-content {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    animation: fadeIn 1s ease-in;
-}
-
-/* Gaya hak cipta */
-.footer-copyright {
-    font-size: 12px; /* Ukuran teks lebih kecil */
-    color: #888; /* Warna teks abu-abu */
-    text-align: center; /* Teks sejajar di tengah */
-    margin-top: 40px; /* Memberi jarak lebih besar ke atas agar lebih terpisah */
-}
-
-.footer-copyright p {
-    margin: 0; /* Hilangkan margin bawaan */
-}
-
-/* Logo BMER di Footer */
-.footer-logo {
-    color: var(--text-light);
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.footer-logo:hover {
-    color: var(--text-light); 
-}
-
-.footer-links a {
-
-    color: var(--text-light);
-    text-decoration: none;
-    transition: color 0.1s ease;
-    margin: 0 1rem;
-}
-
-.footer-links a:hover {
-    color: var(--text-light); 
-}
-
-.footer-social {
-    display: flex;
-    flex-direction: column; /* Mengatur arah vertikal (atas bawah) */
-    align-items: flex-start; /* Menyelaraskan teks di kiri */
-    gap: 10px; /* Jarak antar elemen */
-}
-
-.footer-social a {
-    display: flex;
-    align-items: center; /* Ikon dan teks tetap sejajar */
-    text-decoration: none; /* Menghapus garis bawah pada tautan */
-    color: inherit; /* Mengikuti tema warna teks */
-    font-size: 16px; /* Ukuran font */
-}
-
-.footer-social a i {
-    margin-right: 5px; /* Jarak antara ikon dan teks */
-}
-
-.footer-social a:hover {
-    color: #ff5722; /* Warna saat hover */
-}
-
-.footer-social a:hover {
-    color: #ff5722; /* Warna saat hover */
-}
-
-
-
-/* Scroll to Top Button */
-.scroll-to-top {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background-color: var(--primary-orange);
-    color: var(--text-light);
-    border-radius: 50%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    display: none;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
-
-.scroll-to-top.show {
-    display: block;
-    opacity: 1;
-}
-
-.scroll-to-top:hover {
-    background-color: #ff8c00;
-}
-
-/* Animations */
-@keyframes gradientBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide-animation {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .product-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .hero-video {
-        width: 70%;
-        height: 70%;
-    }
-}
-
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .nav-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nav-links {
-        margin-top: 1rem;
-    }
-
-    .nav-links li {
-        margin: 0 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero-video {
-        width: 80%;
-        height: 80%;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 1.5rem;
-        text-align: center;
-    }
-}
-
-/* Styling untuk bagian alamat */
-
-.footer-address h3 {
-    font-size: 1.5em;           /* Ukuran font lebih besar untuk judul */
-    color: #ffffff;                /* Warna teks untuk judul */
-    margin-bottom: 15px;        /* Memberikan jarak bawah antara judul dan paragraf */
-}
-
-.footer-address p {
-    font-size: 1em;             /* Ukuran font untuk alamat */
-    color: #ffffff;                /* Warna teks untuk alamat */
-    line-height: 1.6;           /* Jarak antar baris untuk kemudahan baca */
-    margin: 5px 0;              /* Memberikan sedikit jarak antar paragraf */
-}
-
-
-@media (max-width: 480px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero-video {
-        width: 90%;
-        height: 90%;
-    }
-}
