@@ -1,82 +1,332 @@
-/* Dasar untuk Hero Section */
-.hero {
+/* Root Variables */
+:root {
+    --primary-orange: #faa602;
+    --secondary-black: #1A1A1A;
+    --text-light: #FFFFFF;
+    --text-dark: #333333;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ganti kursor di seluruh halaman dengan logo BMER */
+body {
+    cursor: url('Logo BMER.png'), auto;  /* Gantilah 'images/bmer-logo.png' dengan path yang sesuai */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+/* Navigation */
+nav {
+    background-color: var(--secondary-black);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo img {
+    height: 30px; /* Adjust this value as per your logo size */
+    width: auto; /* Maintains aspect ratio */
+    margin-left: -60px; /* Adjust the negative value to move it left */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
     position: relative;
-    background: #f4f4f4; /* Ganti dengan warna latar belakang hero */
-    padding: 80px 20px;  /* Padding lebih kecil untuk perangkat mobile */
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-orange);
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.nav-links a:hover {
+    color: var(--primary-orange);
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Hero Section */
+#home {
+    position: relative;
+    height: 100vh;
+    background: url('image1.jpg') no-repeat center center / cover;
+    background-size: cover;
+    animation: backgroundMove 25s infinite alternate; /* Animasi untuk background */
+}
+
+@keyframes backgroundMove {
+    0% { background-image: url('image1.jpg'); }
+    20% { background-image: url('image2.jpg'); }
+    40% { background-image: url('image3.jpg'); }
+    60% { background-image: url('image4.jpg'); }
+    80% { background-image: url('image5.jpg'); }
+    100% { background-image: url('image6.jpg'); }
+}
+
+#home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.60);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* Adjusted for mobile */
+    font-weight: bold;
+    margin: 0;
+}
+
+.hero-content p {
+    color: white;
+    font-size: 1.2rem; /* Adjusted for mobile */
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+/* Video Styling */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjusted for mobile */
+    height: 80%;
+    object-fit: cover;
+    z-index: 0;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+}
+
+/* Products Section */
+.products {
+    padding: 4rem 2rem; /* Adjusted for mobile */
+    background-color: var(--text-light);
+    margin-bottom: 4rem;
+}
+
+.products h2 {
+    text-align: center;
+    color: var(--secondary-black);
+    margin-bottom: 3rem;
+    font-size: 2rem; /* Adjusted for mobile */
+    font-weight: bold;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Adjusted for mobile */
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1);
+}
+
+/* Accessories Section */
+.accessory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Adjusted for mobile */
+    gap: 20px; /* Adjusted for mobile */
+}
+
+.accessory-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    transition: transform 0.3s ease-in-out;
+    height: 100%;
+}
+
+/* Service Section */
+.services {
+    padding: 2rem 1rem; /* Adjusted for mobile */
+    background-color: #f9f9f9;
     text-align: center;
 }
 
-/* Hero Content Animasi */
-.hero-content {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1.5s forwards;
-}
-
-/* Animasi fadeInUp */
-@keyframes fadeInUp {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Judul Hero */
-.hero-content h1 {
-    font-size: 2.5em;  /* Ukuran font lebih kecil untuk handphone */
+.services h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem; /* Adjusted for mobile */
     color: #333;
-    margin: 0;
-    animation-delay: 0.3s;
 }
 
-/* Paragraf Hero */
-.hero-content p {
-    font-size: 1em;   /* Ukuran font lebih kecil untuk handphone */
+.services-grid {
+    display: flex;
+    flex-direction: column; /* Adjusted for mobile */
+    gap: 1rem; /* Adjusted for mobile */
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 100%; /* Adjusted for mobile */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* About Section */
+.about {
+    padding: 2rem 1rem; /* Adjusted for mobile */
+    background-color: #fdfdfd;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.about-text {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1rem;
     color: #555;
-    margin-top: 20px;
-    animation-delay: 0.6s;
 }
 
-/* Responsive untuk Mobile (Handphone) */
-@media screen and (max-width: 768px) {
-    /* Mengatur padding untuk mobile */
-    .hero {
-        padding: 80px 15px; /* Padding lebih kecil */
-    }
-
-    /* Judul lebih kecil untuk perangkat mobile */
-    .hero-content h1 {
-        font-size: 2em; /* Ukuran font lebih kecil */
-        margin-bottom: 15px; /* Mengurangi margin bawah judul */
-    }
-
-    /* Paragraf lebih kecil */
-    .hero-content p {
-        font-size: 1em;   /* Ukuran font lebih kecil */
-        margin-top: 15px;  /* Memberikan jarak lebih kecil */
-    }
-
-    /* Menjaga konten tetap responsif */
-    .hero-content {
-        padding: 0 10px;  /* Berikan sedikit ruang pada kiri dan kanan */
-    }
+/* Contact Section */
+.contact {
+    padding: 6rem 2rem;
+    background-color: var(--text-light);
 }
 
-/* Optional: Jika ingin mengurangi lebih banyak spasi di perangkat kecil */
-@media screen and (max-width: 480px) {
-    .hero {
-        padding: 60px 10px; /* Padding lebih kecil */
-    }
-
-    .hero-content h1 {
-        font-size: 1.8em; /* Ukuran font lebih kecil untuk ponsel yang lebih kecil */
-    }
-
-    .hero-content p {
-        font-size: 0.9em; /* Ukuran font lebih kecil */
-    }
+.contact h2 {
+    text-align: center;
+    color: var(--secondary-black);
+    margin-bottom: 3rem;
+    font-size: 2rem; /* Adjusted for mobile */
+    font-weight: bold;
 }
+
+.contact-container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    color: #000000;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: #25D366;
+    color: white;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128C7E;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-black);
+    color: var(--text-light);
+    padding: 2rem;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: var(--primary-orange);
+}
+
+.footer-content {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
